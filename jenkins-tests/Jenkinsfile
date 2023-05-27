@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    nodejs 'Instalar NodeJS 11.0.0'
+    nodejs 'Install NodeJS 20.1.0'
   }
 
   options {
