@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    nodejs 'node-19.5.0'
+    nodejs 'Instalar NodeJS 11.0.0'
   }
 
   options {
@@ -11,12 +11,12 @@ pipeline {
   stages {
     stage('Install dependencies') {
       steps {
-        sh 'cd jenkins-tests && npm i'
+        powershell.exe -Command "cd jenkins-tests; npm install"
       }
     }
     stage('Run tests') {
       steps {
-        sh 'cd jenkins-tests && npm t'
+        powershell.exe -Command "cd jenkins-tests; npm test"
       }
     }
   }
