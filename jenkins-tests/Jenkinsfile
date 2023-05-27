@@ -11,12 +11,12 @@ pipeline {
   stages {
     stage('Install dependencies') {
       steps {
-        powershell.exe -Command "cd jenkins-tests; npm install"
+        sh 'cd jenkins-tests && npm i'
       }
     }
     stage('Run tests') {
       steps {
-        powershell.exe -Command "cd jenkins-tests; npm test"
+        sh 'cd jenkins-tests && npm t'
       }
     }
   }
